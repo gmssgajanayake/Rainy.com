@@ -309,6 +309,8 @@ audio::-webkit-media-controls-time-remaining-display {
     background: #010926;
     padding-left: 340px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 5px;
 }
 
@@ -553,6 +555,12 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .today-highlight-card > .row-2 > .inner{
    background: #407088; ;
+}
+
+@media only screen and (max-width: 600px) {
+    /*body {
+        display: none;
+    }*/
 }
 
 
