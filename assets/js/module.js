@@ -1,7 +1,6 @@
 import {fetchData, url} from "./api.js";
 import {updateAirPollutionData, updateFiveDateForecast, updateWeatherData} from "./app.js";
 
-
 export const months = [
     "January",
     "February",
@@ -281,6 +280,12 @@ export const countryName = [
     {"name": "Zimbabwe", "code": "ZW"}
 ];
 
+export const reloadAllData = (latitude, longitude) => {
+    getCurrentWeatherData(latitude, longitude);
+    getAirPollutionData(latitude, longitude);
+    getFiveDayForecast(latitude, longitude);
+};
+
 /* Get date as " Friday 28, April " using date unix and time zone */
 export const getDate = () => {
     const date = new Date();
@@ -292,14 +297,14 @@ export const getDate = () => {
 /* Get date and time using unix and timezone */
 export const getUnixDate = (unix, timezone) => {
     const date = new Date(unix * 1000);
-    const dateOfPre = new Date((unix-10800) * 1000);
+    const dateOfPre = new Date((unix - 10800) * 1000);
     let time = ((date.getHours() * 60) + date.getMinutes()) + date.getTimezoneOffset(timezone);
     const nameOfDay = weekDays[date.getUTCDay()];
-    const nameofMonth =  time<0 ? months[dateOfPre.getMonth()] :  months[date.getMonth()];
-    const dateAsNumber= time<0 ? dateOfPre.getDate() : date.getDate();
+    const nameofMonth = time < 0 ? months[dateOfPre.getMonth()] : months[date.getMonth()];
+    const dateAsNumber = time < 0 ? dateOfPre.getDate() : date.getDate();
     time = time < 0 ? time + (24 * 60) : time;
     return {
-        date:dateAsNumber < 10 ? "0"+dateAsNumber : dateAsNumber,
+        date: dateAsNumber < 10 ? "0" + dateAsNumber : dateAsNumber,
         day: nameOfDay,
         month: nameofMonth,
         hour: Math.floor(time / 60),
@@ -315,9 +320,7 @@ export const getTime = (unixTime) => {
 export const getMyLocation = () => {
     window.navigator.geolocation.getCurrentPosition(res => {
         const {latitude, longitude} = res.coords;
-        getCurrentWeatherData(latitude, longitude);
-        getAirPollutionData(latitude, longitude);
-        getFiveDayForecast(latitude,longitude);
+        reloadAllData(latitude,longitude);
     }, error => {
         console.log(error.message);
     });
@@ -333,7 +336,7 @@ const setCurrentWeatherData = (data) => {
 };
 
 export const mps_to_kmh = mps => {
-    return mps * 0.36;
+    return Math.round( mps * 3.6);
 };
 
 export const getCurrentWeatherData = (lat, lon) => {

@@ -24,20 +24,30 @@ export const updateWeatherData = (data, ...param) => {
 export const updateAirPollutionData = data => {
     /* console.log(data);*/
 };
-
 export const updateFiveDateForecast = data => {
-    for (let i = 1; i <= 5; ) {
-        for (const listElement of data.list) {
-            if (getUnixDate(listElement.dt).hour === 0) {
-                document.getElementById(`day-${i}`).innerHTML =
-                    `<img src="assets/images/weather_icons/${data.list[i].weather[0].icon}.png" alt="">
+    let i = 1;
+    for (const listElement of data.list) {
+        if (getUnixDate(listElement.dt).hour === 0) {
+            document.getElementById(`day-${i}`).innerHTML =
+                `<img src="assets/images/weather_icons/${data.list[i].weather[0].icon}.png" alt="">
             <h4>${Math.round(listElement.main.temp)} &#x00B0;C</h4>
-            <h6>${module.getUnixDate(listElement.dt, data.city.timezone).date}, ${module.getUnixDate(listElement.dt,data.city.timezone).month}</h6>
+            <h6>${module.getUnixDate(listElement.dt, data.city.timezone).date}, ${module.getUnixDate(listElement.dt, data.city.timezone).month}</h6>
             <h6>${module.getUnixDate(listElement.dt, data.city.timezone).day}</h6>`;
-                i++;
-            }
+            i++;
         }
+    }
+    console.log(data);
+    for (let j = 1; j <= 8 ; j++) {
+        const hour =module.getUnixDate(data.list[j-1].dt).hour;
+        document.getElementById(`dt-box-${j}`).innerHTML=
+            `<h5>${hour > 12 ? hour - 12 + " PM" : hour + " AM"}</h5>
+            <img src="assets/images/weather_icons/${data.list[j - 1].weather[0].icon}.png" alt="">
+            <h5>${Math.round(data.list[j - 1].main.temp)} &#x00B0;C</h5>`;
 
+        document.getElementById(`dw-box-${j}`).innerHTML=
+            `<h5>${hour > 12 ? hour - 12 + " PM" : hour + " AM"}</h5>
+            <img src="assets/images/weather_icons/direction.png" style="transform:rotate(${data.list[j-1].wind.deg}deg);" alt="">
+            <h5>${module.mps_to_kmh(data.list[j-1].wind.speed)} km/h</h5>`;
     }
 };
 

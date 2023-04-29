@@ -37,10 +37,9 @@ window.addEventListener("load", () => {
 */
 
 import * as module from "./module.js";
+import {reloadAllData} from "./module.js";
 
 window.addEventListener("load", () => {
     //Default colombo
-    module.getCurrentWeatherData(6.9387469,79.8541134);
-    module.getAirPollutionData(6.9387469,79.8541134);
-    module.getFiveDayForecast(6.9387469,79.8541134);
+    reloadAllData(6.9387469,79.8541134);
 });
