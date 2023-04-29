@@ -40,29 +40,3 @@ export const url = {
     }
 };
 
-
-/*
-
-fetchData(url.currentWeather(6.792538,80.952419),data=>{
-    console.log(data);
-})
-
-fetchData(url.fiveDayForecast(6.792538,80.952419),data=> {
-    console.log(data);
-});
-
-fetchData(url.airPollution(6.792538,80.952419),data=>{
-    console.log(data);
-});
-
-fetchData(url.reverseGeo(6.792538,80.952419),data=>{
-    console.log(data);
-});
-
-fetchData(url.geo('london'),data=>{
-    console.log(data);
-})
-
-*/
-
-

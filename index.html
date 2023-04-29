@@ -23,6 +23,7 @@
 <body>
 <div class="main-outer">
     <div class="main-inner">
+        <!-- Header -->
         <div class="header-outer">
             <audio controls autoplay loop>
                 <source src="assets/audio/technology-calming-corporate-21241.mp3" type="audio/mpeg">
@@ -44,7 +45,7 @@
                         <input type="search" id="default-search" class="search-bar" placeholder="Search city...">
                     </form>
                 </div>
-                <div class="current-location">
+                <div class="current-location" id="current-location">
                     <div class="location-icon">
                         <i class="fa-solid fa-location-crosshairs"></i>
                     </div>
@@ -54,7 +55,9 @@
                 </div>
             </div>
         </div>
+        <!-- Container -->
         <div class="main-container">
+            <!-- Left side container -->
             <div class="left-container-outer">
                 <div class="left-container-inner">
                     <div class="inner-box now-weather">
@@ -62,24 +65,24 @@
                             <h4 style="color: rgba(255,255,255,0.64) ; margin-top: 25px">Now</h4>
                             <div class="tem-card">
                                 <div class="tem">
-                                    <h1>25 &#x00B0;C</h1>
+                                    <h1 id="temp-now"></h1>
                                 </div>
                                 <div class="tem-icon">
-                                    <img src="assets/images/weather_icons/04d.png" alt="">
+                                    <img id="cloud-icon" src="assets/images/weather_icons/04d.png" alt="">
                                 </div>
                             </div>
-                            <h5 style="margin-left: 30px;color: rgba(255,255,255,0.58);font-weight: normal">Broken
-                                clouds</h5>
+                            <h5 id="description"
+                                style="margin-left: 30px;color: rgba(255,255,255,0.58);font-weight: normal"></h5>
                         </div>
                         <hr>
                         <div class="bottom">
                             <div class="date-card">
                                 <i class="fa-regular fa-calendar"></i>
-                                <h5>Friday 26, April</h5>
+                                <h5 id="date"></h5>
                             </div>
                             <div class="location-card">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <h5>Colombo, Sri Lanka</h5>
+                                <h5 id="location-card"></h5>
                             </div>
                         </div>
                     </div>
@@ -87,39 +90,20 @@
                         <h4 style="width: 260px; margin: 12px 0">5 Days Forecast</h4>
                     </div>
                     <div class="inner-box next-five-days">
-                        <div class="day-card day-1">
-                            <img src="assets/images/weather_icons/09d.png" alt="">
-                            <h4>21 &#x00B0;C</h4>
-                            <h6>27 April</h6>
-                            <h6>Wednesday</h6>
+                        <div class="day-card" id="day-1">
                         </div>
-                        <div class="day-card day-1">
-                            <img src="assets/images/weather_icons/02d.png" alt="">
-                            <h4>22 &#x00B0;C</h4>
-                            <h6>28 April</h6>
-                            <h6>Thursday</h6>
+                        <div class="day-card" id="day-2">
                         </div>
-                        <div class="day-card day-1">
-                            <img src="assets/images/weather_icons/01d.png" alt="">
-                            <h4>27 &#x00B0;C</h4>
-                            <h6>29 April</h6>
-                            <h6>Friday</h6>
+                        <div class="day-card" id="day-3">
                         </div>
-                        <div class="day-card day-1">
-                            <img src="assets/images/weather_icons/09d.png" alt="">
-                            <h4>32 &#x00B0;C</h4>
-                            <h6>30 April</h6>
-                            <h6>Saturday</h6>
+                        <div class="day-card" id="day-4">
                         </div>
-                        <div class="day-card day-1">
-                            <img src="assets/images/weather_icons/11n.png" alt="">
-                            <h4>15 &#x00B0;C</h4>
-                            <h6>01 May</h6>
-                            <h6>Sunday</h6>
+                        <div class="day-card" id="day-5">
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Right side container -->
             <div class="right-container-outer">
                 <div class="right-container-inner">
                     <div class="today-highlight-card">
@@ -159,15 +143,16 @@
                                     <h5>Sunrise & Sunset</h5>
                                 </div>
                                 <div class="content">
-                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-sun.svg" alt="" style="width: 60%;"></div>
+                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-sun.svg" alt=""
+                                                                               style="width: 60%;"></div>
                                     <div class="box " style="width: 140px; align-items: flex-start">
                                         <h6>Sunrise</h6>
-                                        <h1>6:56 AM</h1>
+                                        <h1 id="sun-rise"></h1>
                                     </div>
                                     <div class="box" style="width: 50px"><i class="fa-regular fa-moon"></i></div>
                                     <div class="box " style="width: 140px; align-items: flex-start">
                                         <h6>Sunset</h6>
-                                        <h1>6:56 AM</h1>
+                                        <h1 id="sun-set"></h1>
                                     </div>
                                 </div>
                             </div>
@@ -178,9 +163,12 @@
                                     <h5>Humanity</h5>
                                 </div>
                                 <div class="content">
-                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-humidity-96.png" alt="" style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box " style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1>82<span style="font-size: 23px">%</span></h1>
+                                    <div class="box " style="width: 60px"><img
+                                            src="assets/images/icons8-humidity-96.png" alt=""
+                                            style="width: 60%;margin-left: 20px;"></div>
+                                    <div class="box "
+                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                        <h1 id="humanity"></h1>
                                     </div>
                                 </div>
                             </div>
@@ -189,9 +177,12 @@
                                     <h5>Pressure</h5>
                                 </div>
                                 <div class="content">
-                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-wave-lines-96.png" alt="" style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box " style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1>1025<span style="font-size: 23px">hPa</span></h1>
+                                    <div class="box " style="width: 60px"><img
+                                            src="assets/images/icons8-wave-lines-96.png" alt=""
+                                            style="width: 60%;margin-left: 20px;"></div>
+                                    <div class="box "
+                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                        <h1 id="pressure"></h1>
                                     </div>
                                 </div>
                             </div>
@@ -200,9 +191,13 @@
                                     <h5>Visibility</h5>
                                 </div>
                                 <div class="content">
-                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-eye-96.png" alt="" style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box " style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1>10<span style="font-size: 23px">km</span></h1>
+                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-eye-96.png"
+                                                                               alt=""
+                                                                               style="width: 60%;margin-left: 20px;">
+                                    </div>
+                                    <div class="box "
+                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                        <h1 id="visibility"></h1>
                                     </div>
                                 </div>
                             </div>
@@ -211,9 +206,12 @@
                                     <h5>Feels Like</h5>
                                 </div>
                                 <div class="content">
-                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-temperature-90.png" alt="" style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box " style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1>33<span style="font-size: 23px">&#x00B0;C</span></h1>
+                                    <div class="box " style="width: 60px"><img
+                                            src="assets/images/icons8-temperature-90.png" alt=""
+                                            style="width: 60%;margin-left: 20px;"></div>
+                                    <div class="box "
+                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                        <h1 id="feels-like"></h1>
                                     </div>
                                 </div>
                             </div>
@@ -323,12 +321,9 @@
         </div>
     </div>
 </div>
-
-<!--Fontawesome kit-->
 <script src="https://kit.fontawesome.com/6ebaf57622.js" crossorigin="anonymous"></script>
 <!--JavaScript files-->
 <script src="assets/js/app.js" type="module"></script>
 <script src="assets/js/route.js" type="module"></script>
-<script src="assets/js/api.js" type="module"></script>
 </body>
 </html>
