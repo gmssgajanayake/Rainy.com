@@ -178,7 +178,6 @@ audio::-webkit-media-controls-time-remaining-display {
     width: 100%;
     flex: 1;
     display: flex;
-
 }
 
 .left-container-outer {
@@ -276,6 +275,7 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .next-five-days {
     justify-content: center;
+    padding: 10px 0;
 }
 
 .inner-box > .day-card {
@@ -299,6 +299,17 @@ audio::-webkit-media-controls-time-remaining-display {
     margin-left: 20px;
     color: rgba(255, 255, 255, 0.56);
     font-weight: normal;
+}
+
+.inner-box {
+    width: 280px;
+    height: 250px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 
@@ -352,7 +363,7 @@ audio::-webkit-media-controls-time-remaining-display {
     background-color: rgba(255, 255, 255, 0.04);
 }
 
-.weather > .dt-box:hover {
+.weather >.res>.dt-box:hover {
     width: 105px;
     height: 138px;
     transition: .2s;
@@ -360,7 +371,7 @@ audio::-webkit-media-controls-time-remaining-display {
     cursor: pointer;
 }
 
-.windy > .dt-box:hover {
+.windy >.res> .dt-box:hover {
     width: 105px;
     height: 138px;
     transition: .2s;
@@ -430,7 +441,20 @@ audio::-webkit-media-controls-time-remaining-display {
     flex-direction: column;
 }
 
-.today-highlight-card > .row-2 > .inner {
+.today-highlight-card > .row-2 > .mb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-highlight-card > .row-2 > .mb>.pressure{
+    margin-left: 12px;
+}
+.today-highlight-card > .row-2 > .mb>.visibility{
+    margin-right: 12px;
+}
+
+.today-highlight-card > .row-2 > .mb > .inner {
     width: 200px;
     height: 130px;
     border-radius: 10px;
@@ -442,7 +466,6 @@ audio::-webkit-media-controls-time-remaining-display {
 .today-highlight-card > .row-1 > .inner > .title {
     width: 100%;
     height: 50px;
-    /* border: 1px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -472,6 +495,8 @@ audio::-webkit-media-controls-time-remaining-display {
     justify-content: center;
     align-items: center;
 }
+
+
 
 .today-highlight-card > .row-1 > .inner > .content > .box {
     width: 80px;
@@ -503,7 +528,7 @@ audio::-webkit-media-controls-time-remaining-display {
 !important;
 }
 
-.today-highlight-card > .row-2 > .inner > .title {
+.today-highlight-card > .row-2 > .mb > .inner > .title {
     width: 100%;
     height: 50px;
     display: flex;
@@ -511,14 +536,14 @@ audio::-webkit-media-controls-time-remaining-display {
     align-items: center;
 }
 
-.today-highlight-card > .row-2 > .inner > .title > h5 {
+.today-highlight-card > .row-2 > .mb > .inner > .title > h5 {
     margin-left: 20px;
     color: rgba(255, 255, 255, 0.4);
     font-weight: normal;
 }
 
 
-.today-highlight-card > .row-2 > .inner > .content {
+.today-highlight-card > .row-2 > .mb > .inner > .content {
     width: 100%;
     flex: 1;
     display: flex;
@@ -527,17 +552,17 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 
-.today-highlight-card > .row-2 > .inner > .content > .box > i {
+.today-highlight-card > .row-2 > .mb > .inner > .content > .box > i {
     color: rgba(255, 255, 255, 0.84);
     font-size: 30px;
 }
 
-.today-highlight-card > .row-2 > .inner > .content > .box > h6 {
+.today-highlight-card > .row-2 > .mb > .inner > .content > .box > h6 {
     color: rgba(255, 255, 255, 0.48);
     font-weight: lighter;
 }
 
-.today-highlight-card > .row-2 > .inner > .content > .box > h1 {
+.today-highlight-card > .row-2 > .mb > .inner > .content > .box > h1 {
     color: rgba(255, 255, 255, 0.91);
     font-weight: lighter;
     font-size: 30px;
@@ -547,20 +572,244 @@ audio::-webkit-media-controls-time-remaining-display {
     background-color: rgba(216, 88, 246, 0.62);
     cursor: pointer;
 }
+
 .today-highlight-card > .row-1 > .inner.air-quality {
     background-color: rgba(255, 255, 255, 0.19);
     transition: .7s;
     cursor: pointer;
 }
 
-.today-highlight-card > .row-2 > .inner{
-   background: #407088; ;
+.today-highlight-card > .row-2 > .mb > .inner {
+    background: #407088;;
 }
 
-@media only screen and (max-width: 600px) {
-    /*body {
-        display: none;
-    }*/
+.res{
+    width: 49%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .header-outer {
+        z-index: 1000;
+    }
+
+    .left-container-outer {
+        position: relative;
+        z-index: 0;
+        width: 100vw;
+        padding: 0;
+    }
+
+
+    .right-container-outer {
+        width: 100vw;
+        height: auto;
+        padding-left: 0;
+        padding-top: 40px;
+    }
+
+    .right-container-inner {
+        height: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .today-highlight-card {
+        width: 80vw;
+        height: auto;
+        margin-left: 0;
+        border-radius: 30px;
+        background-color: rgba(255, 255, 255, 0.04);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .today-highlight-card > .row-1 {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* border: 1px solid red;*/
+    }
+
+
+    .today-highlight-card > .row-2 {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .today-highlight-card > .row-1>.inner {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+
+    .inner.sun-rise {
+        margin-right: 0 !important;
+        margin-bottom: 10px;
+    }
+
+    .inner.air-quality {
+        margin-left: 0 !important;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .humanity {
+        margin-left: 0 !important;
+    }
+
+    .feels-like {
+        margin-right: 0 !important;
+    }
+
+    .header-inner{
+
+    }
+    .search{
+        width:100px;
+        height: 40px;
+    }
+
+    .search > form {
+        flex: 1;
+        margin-right: 10px;
+        width: 29px;
+    }
+
+    .search-bar {
+        height: 40px;
+        width: 100%;
+        border: none;
+    }
+
+    .search-bar:focus {
+        outline: none;
+    }
+
+    .current-location {
+        width: 80%;
+        height: 40px;
+        border-radius: 50px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #692FEF;
+        cursor: pointer;
+    }
+
+    .current-location > div > h5 {
+      display: none;
+    }
+
+    .location-icon {
+        border-radius: 50px;
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .inner-box {
+        width: 80%;
+        height: 250px;
+
+    }
+
+    .inner-box.next-five-days{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .today-highlight-card>.row-2>.mb{
+        width: 75%;
+        border: 1px solid #010926;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+
+    .today-highlight-card>.row-2>.mb>.inner{
+        width: 49%;
+    }
+
+
+    .next-few-hours > .row{
+        height: auto;
+        flex-direction: column;
+
+    }
+
+    .right-container-outer{
+        height: auto;
+    }
+
+    .right-container-inner{
+        height: auto;
+    }
+
+    .today-highlight-card.next-few-hours{
+        height: auto;
+    }
+
+    .res{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .res>.dt-box{
+        margin: 10px;
+    }
+
+    .res>.dt-box:first-child{
+        margin-left: 0;
+    }
+
+    .res>.dt-box:last-child{
+        margin-right: 0;
+    }
+
+    .next-few-hours > .row.footer>h5{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .today-highlight-card > .row-1 > .inner > .content > .box > h1,
+    .today-highlight-card > .row-2 > .mb > .inner > .content > .box > h1,
+    .today-highlight-card > .row-1 > .inner > .content > .box > i{
+        font-size: 20px;
+    }
 }
 
 

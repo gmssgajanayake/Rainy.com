@@ -37,22 +37,25 @@
                         <h6>&nbsp;&nbsp;&nbsp;&nbsp;Weather Forecast</h6>
                     </div>
                 </a>
-                <div class="search">
-                    <div class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                <div style="display: flex; align-items: center">
+                    <div class="search" style="margin-right: 20px">
+                        <div class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <form>
+                            <input type="search" id="default-search" class="search-bar" placeholder="Search city...">
+                        </form>
                     </div>
-                    <form>
-                        <input type="search" id="default-search" class="search-bar" placeholder="Search city...">
-                    </form>
+                    <div class="current-location" id="current-location">
+                        <div class="location-icon">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                        </div>
+                        <div>
+                            <h5>Current Location &nbsp;</h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="current-location" id="current-location">
-                    <div class="location-icon">
-                        <i class="fa-solid fa-location-crosshairs"></i>
-                    </div>
-                    <div>
-                        <h5>Current Location &nbsp;</h5>
-                    </div>
-                </div>
+
             </div>
         </div>
         <!-- Container -->
@@ -153,86 +156,101 @@
                             </div>
                         </div>
                         <div class="row-2">
-                            <div class="inner humanity" style="margin-left: 30px">
-                                <div class="title">
-                                    <h5>Humanity</h5>
+                            <div class="mb">
+                                <div class="inner humanity" style="margin-left: 30px">
+                                    <div class="title">
+                                        <h5>Humanity</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="box " style="width: 60px"><img
+                                                src="assets/images/icons8-humidity-96.png" alt=""
+                                                style="width: 60%;margin-left: 20px;"></div>
+                                        <div class="box "
+                                             style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                            <h1 id="humanity"></h1>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <div class="box " style="width: 60px"><img
-                                            src="assets/images/icons8-humidity-96.png" alt=""
-                                            style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box "
-                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1 id="humanity"></h1>
+                                <div class="inner pressure">
+                                    <div class="title">
+                                        <h5>Pressure</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="box " style="width: 60px"><img
+                                                src="assets/images/icons8-wave-lines-96.png" alt=""
+                                                style="width: 60%;margin-left: 20px;"></div>
+                                        <div class="box "
+                                             style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                            <h1 id="pressure"></h1>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="inner pressure">
-                                <div class="title">
-                                    <h5>Pressure</h5>
+                            <div class="mb">
+                                <div class="inner visibility">
+                                    <div class="title">
+                                        <h5>Visibility</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="box " style="width: 60px"><img src="assets/images/icons8-eye-96.png"
+                                                                                   alt=""
+                                                                                   style="width: 60%;margin-left: 20px;">
+                                        </div>
+                                        <div class="box "
+                                             style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                            <h1 id="visibility"></h1>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <div class="box " style="width: 60px"><img
-                                            src="assets/images/icons8-wave-lines-96.png" alt=""
-                                            style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box "
-                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1 id="pressure"></h1>
+                                <div class="inner feels-like" style="margin-right: 30px">
+                                    <div class="title">
+                                        <h5>Feels Like</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="box " style="width: 60px"><img
+                                                src="assets/images/icons8-temperature-90.png" alt=""
+                                                style="width: 60%;margin-left: 20px;"></div>
+                                        <div class="box "
+                                             style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
+                                            <h1 id="feels-like"></h1>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="inner visibility">
-                                <div class="title">
-                                    <h5>Visibility</h5>
-                                </div>
-                                <div class="content">
-                                    <div class="box " style="width: 60px"><img src="assets/images/icons8-eye-96.png"
-                                                                               alt=""
-                                                                               style="width: 60%;margin-left: 20px;">
-                                    </div>
-                                    <div class="box "
-                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1 id="visibility"></h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inner feels-like" style="margin-right: 30px">
-                                <div class="title">
-                                    <h5>Feels Like</h5>
-                                </div>
-                                <div class="content">
-                                    <div class="box " style="width: 60px"><img
-                                            src="assets/images/icons8-temperature-90.png" alt=""
-                                            style="width: 60%;margin-left: 20px;"></div>
-                                    <div class="box "
-                                         style="width: 140px;justify-content: end; display: flex;margin-right: 20px">
-                                        <h1 id="feels-like"></h1>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <h4 style="margin: 20px 10px">Today at</h4>
                     <div class="today-highlight-card next-few-hours">
                         <div class="row weather">
-                            <div class="dt-box" id="dt-box-1"></div>
-                            <div class="dt-box" id="dt-box-2"></div>
-                            <div class="dt-box" id="dt-box-3"></div>
-                            <div class="dt-box" id="dt-box-4"></div>
-                            <div class="dt-box" id="dt-box-5"></div>
-                            <div class="dt-box" id="dt-box-6"></div>
-                            <div class="dt-box" id="dt-box-7"></div>
-                            <div class="dt-box" id="dt-box-8"></div>
+                            <div class="res">
+                                <div class="dt-box" id="dt-box-1"></div>
+                                <div class="dt-box" id="dt-box-2"></div>
+                                <div class="dt-box" id="dt-box-3"></div>
+                                <div class="dt-box" id="dt-box-4"></div>
+                            </div>
+                            <div class="res">
+                                <div class="dt-box" id="dt-box-5"></div>
+                                <div class="dt-box" id="dt-box-6"></div>
+                                <div class="dt-box" id="dt-box-7"></div>
+                                <div class="dt-box" id="dt-box-8"></div>
+                            </div>
+
                         </div>
                         <div class="row windy">
-                            <div class="dt-box" id="dw-box-1"></div>
-                            <div class="dt-box" id="dw-box-2"></div>
-                            <div class="dt-box" id="dw-box-3"></div>
-                            <div class="dt-box" id="dw-box-4"></div>
-                            <div class="dt-box" id="dw-box-5"></div>
-                            <div class="dt-box" id="dw-box-6"></div>
-                            <div class="dt-box" id="dw-box-7"></div>
-                            <div class="dt-box" id="dw-box-8"></div>
+                            <div class="res">
+                                <div class="dt-box" id="dw-box-1"></div>
+                                <div class="dt-box" id="dw-box-2"></div>
+                                <div class="dt-box" id="dw-box-3"></div>
+                                <div class="dt-box" id="dw-box-4"></div>
+                            </div>
+                           <div class="res">
+                               <div class="dt-box" id="dw-box-5"></div>
+                               <div class="dt-box" id="dw-box-6"></div>
+                               <div class="dt-box" id="dw-box-7"></div>
+                               <div class="dt-box" id="dw-box-8"></div>
+                           </div>
+
                         </div>
                         <div class="row footer">
                             <h5> Copyright &copy; 2023 Sakuja Shamal.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
