@@ -33,6 +33,14 @@ export const airQuality = [
     "Very Poor",
 ];
 
+export const airQualityColor=[
+    "A2F6E4",
+    "F5E876",
+    "D09BF7",
+    "EB3F70",
+    "EC315A"
+]
+
 export const countryName = [
     {"name": "Afghanistan", "code": "AF"},
     {"name": "land Islands", "code": "AX"},
@@ -322,6 +330,7 @@ export const getMyLocation = () => {
         const {latitude, longitude} = res.coords;
         reloadAllData(latitude,longitude);
     }, error => {
+        reloadAllData(6.9387469,79.8541134);
         console.log(error.message);
     });
 };
@@ -357,7 +366,15 @@ export const getFiveDayForecast = (lat, lon) => {
     });
 }
 
-
+export const searchLocation = (query)=>{
+    fetchData(url.geo(query), data => {
+        console.log(data);
+        reloadAllData(data[0].lat,data[0].lon);
+    },error=>{
+        console.log(error);
+        reloadAllData(6.9387469,79.8541134);
+    });
+}
 
 
 

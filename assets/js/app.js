@@ -22,7 +22,14 @@ export const updateWeatherData = (data, ...param) => {
 };
 
 export const updateAirPollutionData = data => {
-    /* console.log(data);*/
+    console.log(data);
+    document.getElementById(`air-qlt-1`).innerHTML = `${Math.round(data.list[0].components.pm2_5 * 10) / 10}`
+    document.getElementById(`air-qlt-2`).innerHTML = `${Math.round(data.list[0].components.so2 * 10) / 10}`
+    document.getElementById(`air-qlt-3`).innerHTML = `${Math.round(data.list[0].components.no2 * 10) / 10}`
+    document.getElementById(`air-qlt-4`).innerHTML = `${data.list[0].components.o3}`
+    document.getElementById("air-qlt-text").innerHTML = ` <h5>Air Quality Index</h5><div style="background-color:#${module.airQualityColor[data.list[0].main.aqi]}" class="feeling-text" >
+        <h6  style="color:rgb(0,0,0)">${module.airQuality[data.list[0].main.aqi]}</h6>
+        </div>`;
 };
 export const updateFiveDateForecast = data => {
     let i = 1;
@@ -36,21 +43,24 @@ export const updateFiveDateForecast = data => {
             i++;
         }
     }
-    console.log(data);
-    for (let j = 1; j <= 8 ; j++) {
-        const hour =module.getUnixDate(data.list[j-1].dt).hour;
-        document.getElementById(`dt-box-${j}`).innerHTML=
+    for (let j = 1; j <= 8; j++) {
+        const hour = module.getUnixDate(data.list[j - 1].dt).hour;
+        document.getElementById(`dt-box-${j}`).innerHTML =
             `<h5>${hour > 12 ? hour - 12 + " PM" : hour + " AM"}</h5>
             <img src="assets/images/weather_icons/${data.list[j - 1].weather[0].icon}.png" alt="">
             <h5>${Math.round(data.list[j - 1].main.temp)} &#x00B0;C</h5>`;
 
-        document.getElementById(`dw-box-${j}`).innerHTML=
+        document.getElementById(`dw-box-${j}`).innerHTML =
             `<h5>${hour > 12 ? hour - 12 + " PM" : hour + " AM"}</h5>
-            <img src="assets/images/weather_icons/direction.png" style="transform:rotate(${data.list[j-1].wind.deg}deg);" alt="">
-            <h5>${module.mps_to_kmh(data.list[j-1].wind.speed)} km/h</h5>`;
+            <img src="assets/images/weather_icons/direction.png" style="transform:rotate(${data.list[j - 1].wind.deg}deg);" alt="">
+            <h5>${module.mps_to_kmh(data.list[j - 1].wind.speed)} km/h</h5>`;
     }
 };
 
+document.getElementById("default-search").addEventListener("keyup",(data)=>{
+    console.log(data);
+    module.searchLocation(data.srcElement.value);
+});
 
 
 
