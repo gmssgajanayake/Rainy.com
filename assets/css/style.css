@@ -120,8 +120,8 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 .search-icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 16px;
     margin-left: 5px;
     border-radius: 50px;
     display: flex;
@@ -628,7 +628,7 @@ audio::-webkit-media-controls-time-remaining-display {
     }
 
     .today-highlight-card {
-        width: 80vw;
+        width: 90vw;
         height: auto;
         margin-left: 0;
         border-radius: 30px;
@@ -662,7 +662,7 @@ audio::-webkit-media-controls-time-remaining-display {
     .today-highlight-card > .row-1>.inner {
         margin-top: 10px;
         margin-bottom: 10px;
-        width: 80%;
+        width: 95%;
     }
 
     .inner.sun-rise {
@@ -688,14 +688,14 @@ audio::-webkit-media-controls-time-remaining-display {
 
     }
     .search{
-        width:100px;
+        width:150px;
         height: 40px;
     }
 
     .search > form {
         flex: 1;
         margin-right: 10px;
-        width: 29px;
+        width: 80px;
     }
 
     .search-bar {
@@ -734,7 +734,7 @@ audio::-webkit-media-controls-time-remaining-display {
 
 
     .inner-box {
-        width: 80%;
+        width: 90%;
         height: 250px;
 
     }
@@ -745,7 +745,7 @@ audio::-webkit-media-controls-time-remaining-display {
     }
 
     .today-highlight-card>.row-2>.mb{
-        width: 75%;
+        width: 95%;
         border: 1px solid #010926;
         margin-bottom: 10px;
         justify-content: space-between;
@@ -776,12 +776,12 @@ audio::-webkit-media-controls-time-remaining-display {
 
     .res{
         width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     .res>.dt-box{
-        margin: 10px;
+        margin: 3px;
     }
 
     .res>.dt-box:first-child{
@@ -808,7 +808,7 @@ audio::-webkit-media-controls-time-remaining-display {
     .today-highlight-card > .row-1 > .inner > .content > .box > h1,
     .today-highlight-card > .row-2 > .mb > .inner > .content > .box > h1,
     .today-highlight-card > .row-1 > .inner > .content > .box > i{
-        font-size: 20px;
+        font-size: 25px;
     }
 }
 
